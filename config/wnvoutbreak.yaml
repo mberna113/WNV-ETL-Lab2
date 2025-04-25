@@ -2,3 +2,5 @@ remote_url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vT4llCdGBJ46H_eld3B
 local_dir: "C:/Users/micha/Desktop/School/GIS_305_Programming_forGIS/Lab_2"
 data_format: "csv"
 gdb_path: "C:/Users/micha/Desktop/School/GIS_305_Programming_forGIS/Lab_2/Lab_2_aprx/Lab_2_aprx.gdb"
+proj_dir: "C:/Users/micha/Desktop/School/GIS_305_Programming_forGIS/Lab_2/"
+proj_loc: "C:/Users/micha/Desktop/School/GIS_305_Programming_forGIS/Lab_2/Lab_2_aprx/Lab_2_aprx.aprx"
