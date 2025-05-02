@@ -10,12 +10,26 @@ config = load_config()
 
 class GSheetsEtl(SpatialEtl):
 
+    """                         Class Summary:
+    GSheetsETL preforms an extract, transform, and
+    load process using a URL to a google sheets spreadsheet.
+    The spreadsheet must contain an address and zipcode column.
+    It is referenced via the .YAML file and can be found here:
+    remote_url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vT4llCdGBJ46H_eld3BEVnHLLvoOk0SyJ-0XPKmin9qsihi2VkLZbHTZa3XzwP06AeSPg8CQ2Ls0RKq/pub?output=csv"
+    Parameters:
+        config_loader which contains the link to the .YAML file
+    """
+
     def __init__(self, remote, local_dir, data_format, destination):
         super().__init__(remote, local_dir, data_format, destination)
         self.downloaded_csv = os.path.join(self.local_dir, "Opt_Out_Addresses.csv")
         self.transformed_csv = os.path.join(self.local_dir, "Opt_Out_Addresses_transformed.csv")
 
     def extract(self):
+        """
+        Extracts data from the google sheet and saves it locally
+        :return: local saved doc.
+        """
         print("Extracting addresses from Google Form spreadsheet.")
         r = requests.get(self.remote)
         r.encoding = "utf-8"
@@ -25,6 +39,11 @@ class GSheetsEtl(SpatialEtl):
         print("✅ CSV downloaded")
 
     def nominatim_geocode(self, address):
+        """
+        Geocodes addresses
+        :param address:
+        :return: none
+        """
         base_url = "https://nominatim.openstreetmap.org/search?"
         params = {
             "q": address,
@@ -45,6 +64,10 @@ class GSheetsEtl(SpatialEtl):
         return None, None
 
     def transform(self):
+        """
+        Takes the local file and adds additional details in it to make it easier to geolocate
+        :return:
+        """
         print("Transforming: Adding city/state and geocoding addresses")
 
         if os.path.exists(self.transformed_csv):
@@ -72,6 +95,10 @@ class GSheetsEtl(SpatialEtl):
         print("✅ Transform complete")
 
     def load(self):
+        """
+        Loads the csv data into a local ArcGIS Project using the XY Table to Point
+        :return:
+        """
         print("Loading into ArcGIS as points...")
         arcpy.env.workspace = self.destination
         arcpy.env.overwriteOutput = True
@@ -83,6 +110,11 @@ class GSheetsEtl(SpatialEtl):
         print("✅ Load complete:", out_features)
 
     def final_analysis(self):
+        """
+        Works inside of an ArcPro project to buffer and erase high risk areas with
+        the address areas that have opted out of the program.
+        :return:
+        """
         print("Starting final analysis...")
 
         arcpy.env.workspace = config["gdb_path"]
@@ -103,6 +135,10 @@ class GSheetsEtl(SpatialEtl):
 
 
     def process(self):
+        """
+        Runs the program and is acting as a main for this lab.
+        :return:
+        """
         print("🚀 Starting ETL process...\n")
         self.extract()
         self.transform()

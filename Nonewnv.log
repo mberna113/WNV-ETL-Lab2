@@ -1,0 +1,19 @@
+2025-04-24 22:27:05,012 - INFO - Logging has been configured.
+2025-04-24 22:27:05,013 - INFO - Starting West Nile Virus Simulation
+2025-04-24 22:27:05,019 - DEBUG - Starting new HTTPS connection (1): docs.google.com:443
+2025-04-24 22:27:05,705 - DEBUG - https://docs.google.com:443 "GET /spreadsheets/d/e/2PACX-1vT4llCdGBJ46H_eld3BEVnHLLvoOk0SyJ-0XPKmin9qsihi2VkLZbHTZa3XzwP06AeSPg8CQ2Ls0RKq/pub?output=csv HTTP/11" 307 None
+2025-04-24 22:27:05,713 - DEBUG - Starting new HTTPS connection (1): doc-14-0c-sheets.googleusercontent.com:443
+2025-04-24 22:27:06,368 - DEBUG - https://doc-14-0c-sheets.googleusercontent.com:443 "GET /pub/54bogvaave6cua4cdnls17ksc4/q1q1ieo1fdmmvcsk4gp0oljpj0/1745555225000/100712469838677767810/*/e@2PACX-1vT4llCdGBJ46H_eld3BEVnHLLvoOk0SyJ-0XPKmin9qsihi2VkLZbHTZa3XzwP06AeSPg8CQ2Ls0RKq?output=csv HTTP/11" 200 None
+2025-04-24 22:27:06,381 - DEBUG - Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2025-04-24 22:27:07,136 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=825+Walnut+St%2C+Boulder%2C+CO++Boulder+CO&format=json&limit=1 HTTP/11" 200 489
+2025-04-24 22:27:08,141 - DEBUG - Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2025-04-24 22:27:09,297 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=633+S+Broadway+unit+a%2C+Boulder%2C+CO++Boulder+CO&format=json&limit=1 HTTP/11" 200 2
+2025-04-24 22:27:10,304 - DEBUG - Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2025-04-24 22:27:10,929 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=43017+Boulder+Canyon+Dr%2C+Boulder%2C+CO++Boulder+CO&format=json&limit=1 HTTP/11" 200 464
+2025-04-24 22:27:11,935 - DEBUG - Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2025-04-24 22:27:12,907 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=1770+13th+St%2C+Boulder%2C+CO++Boulder+CO&format=json&limit=1 HTTP/11" 200 521
+2025-04-24 22:27:13,913 - DEBUG - Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2025-04-24 22:27:14,596 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=4670+Broadway%2C+Boulder%2C+CO++Boulder+CO&format=json&limit=1 HTTP/11" 200 497
+2025-04-24 22:27:15,602 - DEBUG - Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2025-04-24 22:27:17,126 - DEBUG - https://nominatim.openstreetmap.org:443 "GET /search?q=2995+55th+St%2C+Boulder%2C+CO++Boulder+CO&format=json&limit=1 HTTP/11" 200 460
+2025-04-24 22:27:20,256 - INFO - ETL process complete \u2705
